@@ -1,0 +1,74 @@
+html * {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 3em;
+    width: 100%;
+    padding: 1%;
+}
+
+nav {
+    height: 3em;
+    width: 100%;
+    padding: 1%;
+}
+
+section {
+    height: inherit;
+    width: 100%;
+}
+
+article {
+    height: inherit;
+    width: 100%;
+    margin: 2%;
+    padding: 1%
+}
+
+footer {
+    height: 6em;
+    width: 100%;
+    padding: 2%
+}
+
+.bg-0{
+    background:#000814;
+}
+
+.bg-1{
+    background:#001d3d;
+}
+
+.bg-2{
+    background:#003566;
+}
+
+.bg-3{
+    background:#ffc300;
+}
+
+.bg-4{
+    background:#ffd60a;
+}
+
+.bg-5{
+    background:#e5e5e5;
+}
+
+.bg-6{
+    background:#ffffff;
+}
+
+.fnt-0{
+    color:#ffffff;
+}
+
+.fnt-1{
+    color:#e5e5e5;
+}
+
+.fnt-2{
+    color:#000814;
+}
