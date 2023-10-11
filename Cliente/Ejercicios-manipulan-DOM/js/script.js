@@ -43,14 +43,18 @@ function addEnlace() { //Inserta enlaces a w3schools en el elemento con id "miDi
     const enlacew3 = "https://www.w3schools.com/"
     //Mete el elemento con id "miDiv" en la variable
     let miDiv = document.getElementById("miDiv");
+    //Crea elemento <p> y lo mete en una variable
+    let parrafo = document.createElement("p");
 
-    //Crea elementos <a> y los mete en una variable
+    //Crea elemento <a> y lo mete en una variable
     let enlace = document.createElement("a");
     //Crea un atributo en <a> que acabamos de crear donde se mete el enlace
     enlace.setAttribute("href", enlacew3);
     //Mete el texto en el <a>
-    enlace.innerHTML = "Visitar w3school";
+    parrafo.innerHTML = "Visitar w3school";
 
+    //Mete el elemento <p> en el enlace
+    enlace.appendChild(parrafo);
     //Mete el elemento <a> en el elemento con id "miLista"
     miDiv.appendChild(enlace);
 }

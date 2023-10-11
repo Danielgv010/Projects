@@ -1,0 +1,25 @@
+body, html{
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.col3{
+    width:30%;
+    height: 100%;
+    border: 1px solid black;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.col3 div{
+    display: flex;
+    width: 100%;
+}
+.col3 div button{
+    width:40%;
+    margin:5%;
+}
