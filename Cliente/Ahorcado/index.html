@@ -7,66 +7,71 @@
     <title>Ahorcado</title>
     <link rel="stylesheet" href="css/style.css">
     </link>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="col3">
+        <div class="col3" id="col1">
             <div>
-                <button id="a">A</button>
-                <button id="b">B</button>
+                <button class="button" id="a" onclick="comprobar('a')">A</button>
+                <button class="button" id="b" onclick="comprobar('b')">B</button>
             </div>
             <div>
-                <button id="c">C</button>
-                <button id="d">D</button>
+                <button class="button" id="c" onclick="comprobar('c')">C</button>
+                <button class="button" id="d" onclick="comprobar('d')">D</button>
             </div>
             <div>
-                <button id="e">E</button>
-                <button id="f">F</button>
+                <button class="button" id="e" onclick="comprobar('e')">E</button>
+                <button class="button" id="f" onclick="comprobar('f')">F</button>
             </div>
             <div>
-                <button id="g">G</button>
-                <button id="h">H</button>
+                <button class="button" id="g" onclick="comprobar('g')">G</button>
+                <button class="button" id="h" onclick="comprobar('h')">H</button>
             </div>
             <div>
-                <button id="i">I</button>
-                <button id="j">J</button>
+                <button class="button" id="i" onclick="comprobar('i')">I</button>
+                <button class="button" id="j" onclick="comprobar('j')">J</button>
             </div>
             <div>
-                <button id="k">K</button>
-                <button id="l">L</button>
+                <button class="button" id="k" onclick="comprobar('k')">K</button>
+                <button class="button" id="l" onclick="comprobar('l')">L</button>
             </div>
             <div>
-                <button id="m">M</button>
-                <button id="n">N</button>
+                <button class="button" id="m" onclick="comprobar('m')">M</button>
+                <button class="button" id="n" onclick="comprobar('n')">N</button>
             </div>
             <div>
-                <button id="o">O</button>
-                <button id="p">P</button>
+                <button class="button" id="o" onclick="comprobar('o')">O</button>
+                <button class="button" id="p" onclick="comprobar('p')">P</button>
             </div>
             <div>
-                <button id="q">Q</button>
-                <button id="r">R</button>
+                <button class="button" id="q" onclick="comprobar('q')">Q</button>
+                <button class="button" id="r" onclick="comprobar('r')">R</button>
             </div>
             <div>
-                <button id="s">S</button>
-                <button id="t">T</button>
+                <button class="button" id="s" onclick="comprobar('s')">S</button>
+                <button class="button" id="t" onclick="comprobar('t')">T</button>
             </div>
             <div>
-                <button id="u">U</button>
-                <button id="v">V</button>
+                <button class="button" id="u" onclick="comprobar('u')">U</button>
+                <button class="button" id="v" onclick="comprobar('v')">V</button>
             </div>
             <div>
-                <button id="w">W</button>
-                <button id="x">X</button>
+                <button class="button" id="w" onclick="comprobar('w')">W</button>
+                <button class="button" id="x" onclick="comprobar('x')">X</button>
             </div>
             <div>
-                <button id="y">Y</button>
-                <button id="z">Z</button>
+                <button class="button" id="y" onclick="comprobar('y')">Y</button>
+                <button class="button" id="z" onclick="comprobar('z')">Z</button>
             </div>
         </div>
-        <div class="col3"></div>
-        <div class="col3"></div>
+        <div class="col3" id="col2">
+            <img src="img/1.png" class="img" id="imgAhorcado" alt="ahorcado">
+        </div>
+        <div class="col3" id="col3">
+            <h1 id="barras"></h1>
+        </div>
     </div>
 </body>
 

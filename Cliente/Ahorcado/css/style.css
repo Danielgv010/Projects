@@ -1,17 +1,22 @@
 body, html{
     margin: 0;
     padding: 0;
+    background: #e5e5e5;
 }
 .wrapper {
     position: relative;
     display: flex;
     height: 100%;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1%;
 }
 .col3{
+    background: #ffffff;
+    border-radius: 3%;
     width:30%;
     height: 100%;
-    border: 1px solid black;
     margin-left: 3%;
     margin-right: 3%;
 }
@@ -22,4 +27,12 @@ body, html{
 .col3 div button{
     width:40%;
     margin:5%;
+}
+h1{
+    letter-spacing: 1vw;
+    text-align: center;
+}
+.img{
+    width: 100%;
+    border-radius: 3%;
 }

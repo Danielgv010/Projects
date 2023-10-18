@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <title>Ejercicio de selectores</title>
+    <style type="text/css">
+        /* Todos los elementos de la pagina */
+        * {
+            font: 1em/1.3 Arial, Helvetica, sans-serif;
+        }
+
+        /* Todos los parrafos de la pagina */
+        p {
+            color: green;
+        }
+
+        /* Todos los párrafos contenidos en #primero */
+        #primero p {
+            color: blue;
+        }
+
+        /* Todos los enlaces la pagina */
+        a {
+            color: red;
+        }
+
+        /* Los elementos "em" contenidos en #primero */
+        #primero em {
+            background: yellow;
+            padding: .1em;
+        }
+
+        /* Todos los elementos "em" de clase "especial" en toda la pagina */
+        em.especial{
+            background: yellow;
+            border: 1px solid #FF9900;
+            padding: .1em;
+        }
+
+        /* Elementos "span" contenidos en .normal */
+        .normal span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="primero">
+        <p>Este es un ejercicio para aprender el uso de selectores,normalmente iriamos
+            a la pagina <a href="#">w3school</a>.<br>Hoy no vamos a hacerlo así, intentaremos escribir
+            el código <em>sin mirar en internet</em>.Así pensaremos un poco...</p>
+    </div>
+    <div class="normal">
+        <p>Ya visteis selectores en primero. Los apuntes podéis encontrarlos <span><a href="#">aquí </a>o mejor
+            </span>en este <a href="#">enlace</a> ,nos darán pistas de lo que hay que hacer.</p>
+        <p>Si verdaderamente <em class="especial">estuviste atento</em> no tendrás problemas.</p>
+        <p>Vamos, intentalo,<em class="especial">no te desanimes</em>. La solución la podrás encontrar <a
+                href="#">aqui</a>. Suerte!
+        <p>
+    </div>
+</body>
+
+</html>
