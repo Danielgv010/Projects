@@ -2,31 +2,29 @@
 
 print("Content-type: text/html\n")
 
-import codigoHtml, os
+import codigoHtml, os, json
 
 def listar_productos(): #Crea una lista ordenada con los productos
     if len(productos) != 0: #Si hay productos se crea la lista
         print("<ol>")
-        #Antes de poner cada elemento se quita el enter
-        for producto in [producto.strip('\n') for producto in productos]:
-            #Separa el elemento por el ; para tener el producto y la cantidad en un array
-            elemento = producto.split(";")
+        #Por cada producto en productos
+        for producto in productos:
             #Da formato al imprimir el elemento en la lista
-            print(f"<li>{elemento[1]} de {elemento[0]}</li>")
+            print(f"<li>{producto[1]} de {producto[0]}</li>")
         print("</ol>")
     else: #Si la lista no tiene productos
         print("<h2>La lista de la compra esta vacia</h2>")
 
 try:
     #Abrir el fichero en modo lectura
-    fichero = open("../datos/listaCompra.dat")
+    fichero = open("../datos/listaCompra.json")
 except:
     #Se crea el fichero en datos si da error al abrir
-    fichero = open("../datos/listaCompra.dat","x")
+    fichero = open("../datos/listaCompra.json","x")
 
-if os.path.getsize("../datos/listaCompra.dat") != 0: #Si el fichero no esta vacio
-    #Leemos el contenido del fichero en una lista de productos
-    productos = fichero.readlines()
+if os.path.getsize("../datos/listaCompra.json") != 0: #Si el fichero no esta vacio
+    #Cargamos el json ( Son listas en una lista [ [],[],[] ] )
+    productos = json.load(fichero)
 else: #Si el fichero esta vacio
     productos = []
 

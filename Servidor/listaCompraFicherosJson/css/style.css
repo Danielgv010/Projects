@@ -1,0 +1,100 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+    background: linear-gradient(white, transparent),#D0D0D0;
+}
+
+nav {
+    height: 10vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav * {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+article * {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+}
+
+.icon-img{
+    width: auto;
+    height: 50%;
+}
+
+.product {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 2%;
+    height: 40vh;
+    width: 30vh;
+    box-shadow: 0.25vh 0.75vh 0.5vh 0.25vh #A0A0A0;
+}
+
+.product * {
+    margin: 0;
+}
+
+.product-img {
+    width: 90%;
+    height: auto;
+}
+
+.controls {
+    position: absolute;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background: black;
+    height: 5vh;
+    width: 100%;
+    bottom: 0;
+}
+
+.add-control{
+    margin: 5%;
+    padding: 2%;
+    border: 1px solid white;
+    border-radius: 5%;
+}
+
+.add-control:hover{
+    background-color: white;
+}
+.add-control:hover *{
+    background-color: white;
+    color: black;
+}
+
+.add-control a{
+    color: white;
+    text-decoration: none;
+}

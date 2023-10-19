@@ -9,17 +9,20 @@ ru = os.environ.get("REQUEST_URI")
 parametros = urlparse(ru)
 parametro = parse_qs(parametros[4])
 
-dato = parametro["producto"][0]
+producto = parametro["producto"][0]
+cantidad = parametro["cantidad"][0]
 
+#Abrimos el fichero para escribir
 fichero = open("../datos/listaCompra.dat", "at")
 
-fichero.write(f"\n {dato}")
+if os.path.getsize("../datos/listaCompra.dat") != 0: #Si el fichero no esta vacio
+    fichero.write("\n")
 
+#Se añade el producto y la cantidad separados por ;
+fichero.write(f"{producto};{cantidad}")
+
+#Cerramos el fichero
 fichero.close()
 
 #Creamos el inicio del HTML
-codigoHtml.inicio_cesta_compra()
-
-print("Producto añadido")
-
-codigoHtml.fin_cesta_compra()
+codigoHtml.html_recarga()

@@ -79,7 +79,7 @@ def fin_cesta_compra():
     
 def formulario():
     print("""
-<form action="productoNuevo.py" method="get">
+<form action="productoNuevoJson.py" method="get">
     <label for="nombre">nombre del producto</label>
     <input type="text" name="producto">
     <hr>
@@ -97,7 +97,7 @@ def html_recarga():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="2;listaCompra.py">
+    <meta http-equiv="refresh" content="2;listaCompraJson.py">
     <title>Cesta Compra</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>

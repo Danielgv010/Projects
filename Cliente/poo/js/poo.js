@@ -7,6 +7,6 @@ const persona = {
 
 console.log(persona.nombre);
 
-persona.nombre = "El Fede"
+persona.apodo = "El Fede"
 
 console.log(persona.nombre);
