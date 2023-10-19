@@ -21,7 +21,7 @@ def pagina_principal():
                         </div>
                     </div>
                     <div class="operations">
-                        <form action="atm.py" method="get"></form>
+                        <form action="atm.py" method="get">
                             <div class="cols">
                                 <div class="col2">
                                     <select class="inputs">
