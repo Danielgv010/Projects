@@ -8,19 +8,37 @@ import os, json
 data_directory = "../data/"
 data_file = "accounts.json"
 file = None
-account = []
+accounts = []
 
-atm_GUI.pagina_principal()
+atm_GUI.home_page_start()
 
-def read_file():
-    json_file = json.load(data_directory+data_file)
-    print(json_file)
+def list_accounts():
+    if len(accounts) != 0:
+        for account in accounts:
+            print(f"<tr><td>{account[0]}</td><td>{account[1]}</td><td>{account[2]}</td><td>{account[3]}</td></tr>")
+    else:
+        print("<tr><td colspan='4'>There is no accounts</td></tr>")
 
-if len(os.listdir(data_directory)) != 0:
+def create_options():
+    if len(accounts) != 0:
+        for account in accounts:
+            print(f"<option value='{account[0]}'>Account {account[0]}</option>")
+    else:
+        print("<option value='0'>You must create an account first</option>")
+
+try:
     file = open(data_directory+data_file)
-else:
+except:
     file = open(data_directory+data_file,"x")
 
+if os.path.getsize(data_directory+data_file) != 0:
+    accounts = json.load(file)
+else:
+    accounts = []
 
-read_file()
+list_accounts()
 file.close()
+
+atm_GUI.home_page_middle()
+create_options()
+atm_GUI.home_page_end()
