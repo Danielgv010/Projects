@@ -1,83 +1,112 @@
-html,body{
+body,html{
+    min-width: 100%;
+    min-height: 100%;
+}
+body *{
     margin: 0;
     padding: 0;
 }
 body {
     position: relative;
-    background: linear-gradient(#ffffff,transparent),#d6d6d6;
-    min-height: 100vh;
-    max-height: 100vh;
+    padding:0;
+    margin:0;
+}
+.wrapper{
+    height: 96%;
+    width: 96%;
     padding:2%;
 }
-.accounts{
-    position: relative;
-    width: 100%;
-    height: 40vh;
-}
 .accounts .table-div{
-    height: 35vh;
-    padding:0vw 5vh 0vh 5vw;
+    display: flex;
+    justify-content: center;
+    max-height: 40vh;
     overflow: scroll;
 }
-.accounts .table-div table {
-    height: auto;
-    width: 100%;
-    text-align: center;
+.table-div table{
     border-collapse: collapse;
+    width: 100%;
+    color: #28345a;
+    font-weight: bolder;
+    border:3px solid #294282;
 }
-.accounts table tr{
-    height:5%;
+table tr{
+    border: 1px solid #9bc6bf;
+}
+table tr th{
+    position: sticky;
+    top:0;
+    background:#294282;
+    color: white;
+    border: 1px solid #28345a;
+}
+.table-div table tr td{
+    padding: 0.5%;
 }
 .account_control{
-    position: relative;
-    display:flex;
-    width: 100%;
-    height: 15%;
+    display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10%;
 }
-.account_control form button{
-    background: black;
-    color: white;
-    width:100%;
-    height: 5vh;
-    border-radius: 5px;
-    box-shadow: 0.25vh 0.75vh 0.5vh 0.25vh #A0A0A0;
+button{
+    padding:0.5% 1% 1% 0.5%;
+    background-color: #28345a;
+    color:white;
+    font-weight: bolder;
+    border-radius: 10px;
+    text-align: center;
 }
 .operations{
-    position: relative;
-    height: 40vh;
-    padding-top: 2%;
+    margin-top:10%;
+}
+.inputs{
+    color: #325c6a;
+    font-weight: bold;
 }
 .cols{
     display: flex;
-    width: 100%;
     justify-content: center;
     align-items: center;
 }
-.cols div.col2{
-    width: 50%;
+.col2{
+    width:100%;
     text-align: center;
 }
-.button1{
-    padding:0.5% 2% 0.5% 2%;
-    background: #7bff7b;
-    box-shadow: 0.25vh 0.75vh 0.5vh 0.25vh #A0A0A0;
-}
-.inputs{
-    padding:0.5% 2% 0.5% 2%;
-    background:white;
-    font-weight: bold;
-    border-radius: 5px;
-}
-.radios{
-    font-weight: bold;
-}
 .account_info{
-    background:white;
-    min-height: 30%;
-    min-width: 100%;
+    border: 3px solid #28345a;
+    padding: 5%;
+    border-radius: 15px;
+}
+.account_info *{
+    margin-top: 4%;
+    font-weight: bold;
+}
+.account_info :first-child{
+    margin-top: 0 !important;
+}
+.account_info h3{
+    color:#9bc6bf;
+}
+.account_info h2{
+    color:#6a9a9e;
+}
+.account_info h1{
+    color:#294282;
 }
 .operation_info{
-    background:white;
+    border: 3px solid #28345a;
+    padding: 5%;
+    border-radius: 15px;
+    margin-top: 10%;
+}
+.operation_info table{
+    width:100%;
+}
+.red-tr{
+    color:red;
+    background: #ffa7a7;
+}
+.green-tr{
+    color:green;
+    background: #96ff96;
 }
