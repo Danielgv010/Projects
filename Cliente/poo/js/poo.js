@@ -1,11 +1,42 @@
+function Persona(nombre,apellidos,edad,nacionalidad){
+    this.nombre = nombre;
+    this.apellidos = apellidos;
+    this.edad = edad;
+    this.nacionalidad = nacionalidad;
+    this.dimeLaEdad = function(){
+        return `Mi edad es ${this.edad}`
+    }
+}
+const persona = new Persona("Federico","Garcia Lorca", 55, "Española")
+
+persona.verDatos = function(){
+    return `${this.nombre} ${this.apellidos}`
+}
+
+function verPersona(){
+    //persona.datosCompletos = persona.datosCompletos.toString();
+    document.getElementById("salida").innerHTML = persona.verDatos();//JSON.stringify(persona)//Object.values(persona)
+}
+
+function verEdad(){
+    document.getElementById("salida").innerHTML = persona.dimeLaEdad()
+}
+/*
 const persona = {
     nombre: "Federico",
     apellidos: "García Lorca",
     edad: 55,
     nacionalidad: "española",
     datosCompletos: function (){
-        console.log(`${this.nombre} - ${this.apellidos} - ${this.edad}`);
+        return `${this.nombre} - ${this.apellidos} - ${this.edad}`;
     }
+}
+
+persona.dimeLaEdad = function(){
+    return `Mi edad es ${this.edad}`;
+}
+function verEdad(){
+    document.getElementById("salida").innerHTML = persona.dimeLaEdad();
 }
 
 console.log(persona.nombre);
@@ -52,7 +83,4 @@ const myObj = {
 for ( let modelo of myObj.cars[0].models ){
     console.log(modelo)
 }
-
-function verElemento(esto){
-    console.log(esto)
-}
+*/

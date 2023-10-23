@@ -42,7 +42,7 @@ def home_page_middle():
 def home_page_end():
     print("""
                                         </select>
-                                        <input class="inputs" type="text" name="ammount" value="0.0" placeholder="Write a number in euro">
+                                        <input class="inputs" type="number" name="ammount" value="0" placeholder="Write a number in euro">
                                     </div>
                                     <div class="col2">
                                         <p class="radios"><input type="radio" name="operation" value="deposit" checked>Deposit</p>

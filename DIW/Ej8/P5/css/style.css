@@ -1,0 +1,19 @@
+body,html{
+    margin:0;
+    padding: 0;
+}
+p{
+    margin: 0.5em;
+}
+.wrapper{
+    max-height: 100vh;
+    max-width: 100vw;
+}
+.poesia{
+    width: 30%;
+    margin: 4%;
+}
+.poesia span{
+    float:left;
+    font-size: 4em;
+}

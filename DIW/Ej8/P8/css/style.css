@@ -1,0 +1,55 @@
+body,html{
+    margin:0;
+    padding: 0;
+}
+p{
+    margin: 0;
+}
+div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    display: block;
+    height: 100vh;
+    width: 860px;
+    max-height: 100vh;
+    max-width: 860px;
+}
+.cabecera{
+    width: 860px;
+    background: #ffeed8;
+    color: #8d4836;
+    height: 50px;
+}
+.menu{
+    width:150px;
+    background: #f7b272;
+    color: #8d4836;
+    float: left;
+    height: 200px;
+}
+.contenido{
+    display: block;
+    float: right;
+}
+.principal{
+    width:510px;
+    background:#e5e5e5;
+    color: #8d4836;
+    float: left;
+    height: 200px;
+}
+.lateral{
+    width:200px;
+    background: aquamarine;
+    color: #8d8d8d;
+    height: 200px;
+}
+.pie{
+    width: 860px;
+    background: #ffe6c4;
+    color: #8d4836;
+    height: 50px;
+}
