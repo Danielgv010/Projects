@@ -8,7 +8,6 @@ import os, json
 data_directory = "../data/"
 data_file = "accounts.json"
 file = None
-accounts = []
 
 #Crea el inicio de la página hasta la tabla
 atm_GUI.home_page_start()
