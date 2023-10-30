@@ -3,72 +3,169 @@ html * {
     padding: 0;
 }
 
-header {
-    height: 3em;
-    width: 100%;
-    padding: 1%;
+body * {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 nav {
-    height: 3em;
+    position: relative;
+    height: 100px;
     width: 100%;
-    padding: 1%;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    height: 100%;
+}
+
+nav ul li {
+    height: 100%;
+    display: flex;
+    margin-left: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li.logo {
+    margin-left: 0 !important;
+}
+
+nav ul li.logo img {
+    height: 100%;
+    width: auto;
 }
 
 section {
-    height: inherit;
+    position: relative;
+    height: auto;
     width: 100%;
 }
 
 article {
-    height: inherit;
+    display: flex;
+    position: relative;
     width: 100%;
-    margin: 2%;
-    padding: 1%
+    justify-content: center;
+    align-items: center;
 }
 
 footer {
-    height: 6em;
+    height: 6vh;
     width: 100%;
     padding: 2%
 }
 
-.bg-0{
-    background:#000814;
+a {
+    text-decoration: none;
 }
 
-.bg-1{
-    background:#001d3d;
+.div-1 {
+    position: relative;
+    display: flex;
+    width: 90%;
 }
 
-.bg-2{
-    background:#003566;
+.div-2{
+    position: relative;
+    width: 75%;
 }
 
-.bg-3{
-    background:#ffc300;
+.div-3 {
+    position: relative;
+    width: 25%;
+    border: 2px solid red;
+    overflow: visible;
 }
 
-.bg-4{
-    background:#ffd60a;
+.div-3:after {
+    content: "";
+    display: block;
+    padding-top: 100%;
 }
 
-.bg-5{
-    background:#e5e5e5;
+.div-3 img{
+    position: absolute;
 }
 
-.bg-6{
-    background:#ffffff;
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
-.fnt-0{
-    color:#ffffff;
+.article-2 {
+    height: 500px;
 }
 
-.fnt-1{
-    color:#e5e5e5;
+.padding-small {
+    padding: 1%;
 }
 
-.fnt-2{
-    color:#000814;
+.padding-medium {
+    padding: 2.5%;
+}
+
+.padding-big {
+    padding: 5%;
+}
+
+.margin-top-small {
+    margin: 1% 0;
+}
+
+.margin-top-medium {
+    margin: 2.5% 0;
+}
+
+.margin-top-big {
+    margin: 5% 0;
+}
+
+.bg-0 {
+    background: #000814;
+}
+
+.bg-1 {
+    background: #001d3d;
+}
+
+.bg-2 {
+    background: #003566;
+}
+
+.bg-3 {
+    background: #ffc300;
+}
+
+.bg-4 {
+    background: #ffd60a;
+}
+
+.bg-5 {
+    background: #e5e5e5;
+}
+
+.bg-6 {
+    background: #ffffff;
+}
+
+.fnt-0 {
+    color: #ffffff;
+}
+
+.fnt-1 {
+    color: #e5e5e5;
+}
+
+.fnt-2 {
+    color: #000814;
 }

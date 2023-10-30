@@ -22,7 +22,7 @@ if "prod" in parameters:
 print("Content-Type: text/html")
 cookie = http.cookies.SimpleCookie()
 
-def imprimirCookie(): #Imprime la cookie en el navegadro
+def imprimirCookie(): #Imprime la cookie en el navegador
     print(cookie)
     print()
 
