@@ -1,4 +1,3 @@
-
 const parallax_elements = document.querySelectorAll(".parallax");
 
 let xMouse = 0, yMouse = 0, rotateDegree = 0;
