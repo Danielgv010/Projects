@@ -10,8 +10,8 @@ print("Content-type: text/html\n")
 
 file_item = form["file-name"] # Pilla el archivo subido en el formulario
 
-if file_item.filename: # ¿?¿¿?¿
-    file_name = os.path.basename(file_item.filename) # ??¿?¿
+if file_item.filename: # Comprueba que se halla seleccionado un fichero
+    file_name = os.path.basename(file_item.filename) # Extrae el nombre del fichero de la ruta
     open(f"ficheros/{file_name}","wb").write(file_item.file.read()) # Abre el fichero en modeo escritura y copia la informacion del archivo subido en el formulario en el archivo que acaba de abrir
 
 

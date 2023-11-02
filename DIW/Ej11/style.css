@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    font-family: Arial;
+    width: 50%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table, table *{
+    border:1px solid #333;
+}
+
+tr{
+    height: 30px;
+}
+
+.yellow td{
+    background:rgb(255, 255, 169);
+}
+
+.moneda{
+    position: relative;
+    padding-left: 1.5rem;
+    background: rgb(229, 243, 255);
+    text-align: start;
+}
+
+.moneda img{ /*No es una imagen de fondo porque se quitaría el color azul claro*/
+    position: absolute;
+    left: 0.2rem;
+    top:50%;
+    transform: translate(0, -50%);
+    border: none;
+}
+
+.header th{
+    background: rgb(228, 236, 240);
+}
+

@@ -1,0 +1,43 @@
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    gap:15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    min-height: 200px;
+    min-width: 200px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: rgb(194, 194, 255);
+    color: rgb(0, 0, 59);
+    text-align: center;
+}
+
+.container-1{
+    animation: container-1 5s infinite;
+}
+
+.container-2{
+    transition: color 1s ease, border 0.3s ease;
+}
+
+.container-2:hover{
+    color: white;
+    border: 3px solid #e5e5e5;
+}
+
+@keyframes container-1 {
+    0%   {
+        transform: translate(-5%,0);
+    }
+    25%  {
+        transform: translate(0,-5%);
+    }
+    50%  {top: 100px;}
+    75%  {top: 200px;}
+    100% {top: 0px;}
+}
