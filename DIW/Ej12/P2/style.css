@@ -8,7 +8,10 @@
 }
 
 .container{
+<<<<<<< HEAD
     position: absolute;
+=======
+>>>>>>> a78143a0af53a21662ad19564879b43e9bc056b9
     min-height: 200px;
     min-width: 200px;
     border: 1px solid black;
@@ -19,16 +22,30 @@
 }
 
 .container-1{
+<<<<<<< HEAD
     left: 300px;
     animation: container-1 5s infinite;
 }
 .container-2{
     right: 300px;
     animation: containe-1 5s infinite;
+=======
+    animation: container-1 5s infinite;
+}
+
+.container-2{
+    transition: color 1s ease, border 0.3s ease;
+}
+
+.container-2:hover{
+    color: white;
+    border: 3px solid #e5e5e5;
+>>>>>>> a78143a0af53a21662ad19564879b43e9bc056b9
 }
 
 @keyframes container-1 {
     0%   {
+<<<<<<< HEAD
         top: 300px;
     }
     25%  {
@@ -43,4 +60,14 @@
     100% {
         
     }
+=======
+        transform: translate(-5%,0);
+    }
+    25%  {
+        transform: translate(0,-5%);
+    }
+    50%  {top: 100px;}
+    75%  {top: 200px;}
+    100% {top: 0px;}
+>>>>>>> a78143a0af53a21662ad19564879b43e9bc056b9
 }

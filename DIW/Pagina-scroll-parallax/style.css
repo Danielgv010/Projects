@@ -1,15 +1,21 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap');
+=======
+>>>>>>> a78143a0af53a21662ad19564879b43e9bc056b9
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 body{
     font-family: "Poppins", sans-serif;
     color:white;
 }
 
+=======
+>>>>>>> a78143a0af53a21662ad19564879b43e9bc056b9
 .wrapper{
     position: relative;
     height: 100vh;
@@ -17,6 +23,7 @@ body{
     overflow: hidden;
 }
 
+<<<<<<< HEAD
 a{
     position: relative;
     color: inherit;
@@ -147,4 +154,22 @@ nav span {
     border-radius: 15px;
     border:3px solid black;
     color: black;
+=======
+.parallax{
+    position: absolute;
+    height: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.img1{
+    top:calc(50%);
+    left: calc(50%);
+    z-index: 8;
+}
+
+.img2{
+    top:calc(50% - 70px);
+    left: calc(50% - 4px);
+    z-index: 7;
+>>>>>>> a78143a0af53a21662ad19564879b43e9bc056b9
 }
