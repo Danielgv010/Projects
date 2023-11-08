@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap');
+
+/*
+    Titles = 1.5em
+    Subtitles = 1.2em
+    Text  = 0.9em
+*/
+
+*,*::before,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    color:white;
+    background: rgba(14, 26, 37, 1);
+}
+
+.wrapper{
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+}
+
+header {
+    height: 100px;
+    padding: 1rem 2rem;
+    letter-spacing: 0.25em;
+    font-size: 1.1em;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0));
+}
+
+header nav{
+    display:flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 0rem 2rem;
+}
+
+header nav div{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap:5rem;
+}
+
+header nav div a {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    height: 60%;
+    text-align: center;
+}
+
+header nav div span a:after{
+    position: absolute;
+    bottom:0;
+    left:50%;
+    content: "";
+    display: block;
+    height:2px;
+    background-color: white;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0%;
+}
+
+header nav div span a:hover:after{
+    width: 100%;
+    left: 0;
+}
+
+header nav div a img{
+    filter: invert(1);
+    height: 100%;
+    width: auto;
+}
+
+.banner{
+    position: absolute;
+    width: 100vw;
+    height: 100svh;
+    top:0;
+    left:0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.banner video{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: brightness(60%);
+}
+
+.banner img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: brightness(60%);
+}
+
+.banner-content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 30%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 2em;
+}
+.banner-content  p{
+    margin-bottom: 1rem;
+}
+
+.button-a{
+    border:1px solid white;
+    padding:0.5rem 2rem;
+    color: inherit;
+    text-decoration: inherit;
+    transition: 0.5s ease;
+}
+
+.button-a:hover{
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 2.25rem;
+}
+
+#modal{
+    position: absolute;
+    display: none;
+    left: 0;
+    top:0;
+    z-index: 99;
+    height: 100svh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background:rgba(0,0,0,0.1);
+}
+
+#modal .modal-content{
+    position: relative;
+    display: flex;
+    background: transparent;
+    width: 400px;
+    height: 300px;
+    padding:2rem;
+    background:rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#modal .modal-content .x{
+    position: absolute;
+    display: flex;
+    top:1%;
+    right: 1%;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: inherit;
+    color: inherit;
+    font-size: 2em;
+}
+
+#modal .modal-content form .input{
+    position: relative;
+    width: 300px;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+}
+
+#modal .modal-content form .input label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s ease;
+}
+
+#modal .modal-content form .input input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color:inherit;
+}
+
+#modal .modal-content form .modal-button{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color:inherit;
+}
+
+#modal .modal-content form .modal-button button{
+    border: 1px solid rgba(255,255,255,0.5);
+    color: inherit;
+    background: transparent;
+    outline: none;
+    padding:0.5rem 2rem;
+    transition: 1s ease;
+}
+
+#modal .modal-content form .modal-button button:hover{
+    background:rgba(255,255,255,0.2);
+
+}
+
+#modal .modal-content form .input input:focus~label,
+#modal .modal-content form .input input:valid~label{
+    top: -5px;
+}
+
+.separator-banner{
+    position: relative;
+    min-height: calc(100svh - 100px);
+    z-index: -99;
+}
+
+.trending-destination{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    padding: 5rem;
+}
+
+.trending-destination .text{
+    display: block;
+    text-align: end;
+    padding: 2rem;
+    height: 100%;
+}
+
+
+.trending-destination .img{
+    display: flex;
+    padding: 2rem;
+    overflow: hidden;
+    height: 800px;
+    width: 600px;
+    justify-content: center;
+}
+
+.trending-destination .img img{
+    box-shadow: 1rem 1rem 1rem rgb(8, 14, 20);
+}
+
+.other-destination{
+    padding: 2rem;
+    height: 100%;
+}
+
+.other-destination .cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+.other-destination .cards .card{
+    position: relative;
+    display: flex;
+    height: 500px;
+    width: 300px;
+    background-color: white;
+    border-radius: 15px;
+    transition: 0.6s ease-out;
+    overflow: hidden;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.other-destination .cards .card .text{
+    position: absolute;
+    top:0;
+    padding: 1.2rem;
+}
+
+.other-destination .cards .card:hover{
+    height: 550px;
+    width: 350px;
+}
+
+article{
+    min-height: 100svh;
+}
+
+h1{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+h2{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    letter-spacing: 0.3rem;
+}
+
+p{
+    font-size: 0.9em;
+}
+
+.underline{
+    padding-bottom: 5rem;
+}
+
+.underline::after{
+    position: absolute;
+    content:"";
+    width: 80%;
+    height: 2px;
+    left:10%;
+    top:40px;
+    background: rgba(255,255,255,0.5);
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+}

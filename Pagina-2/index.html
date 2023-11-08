@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <div>
+                    <a href="index.html"><img src="img/pngwing.com.png" alt=""></a>
+                    <span><a href="about.html">ABOUT</a></span>
+                    <span><a href="shop.html">SHOP</a></span>
+                    <span><a href="explore.html">EXPLORE</a></span>
+                </div>
+                <a href="#" class="button-a" id="open">LOGIN</a>
+            </nav>
+        </header>
+        <section>
+            <div class="banner">
+                <video src="video/banner.mp4" autoplay loop mute></video>
+            </div>
+            <div class="banner-content">
+                <h1>PYRENEES</h1>
+                <p>Come and be enchanted by the Pyrenees, where the mountains whisper tales of history and the landscapes sing songs of awe-inspiring beauty. Your journey to this natural wonderland begins here.</p>
+                <a href="more.html" class="button-a">Learn More</a>
+            </div>
+            <div id="modal">
+                <div class="modal-content">
+                    <form action="login.py">
+                        <a href="#" class="x" id="close">&times;</a>
+                        <h1>LOGIN</h1>
+                        <div class="input">
+                            <input type="text" name="email" id="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input">
+                            <input type="text" name="password" id="password" required>
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="modal-button">
+                            <button type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

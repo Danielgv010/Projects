@@ -1,0 +1,46 @@
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    gap:15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    position: absolute;
+    min-height: 200px;
+    min-width: 200px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: rgb(194, 194, 255);
+    color: rgb(0, 0, 59);
+    text-align: center;
+}
+
+.container-1{
+    left: 300px;
+    animation: container-1 5s infinite;
+}
+.container-2{
+    right: 300px;
+    animation: containe-1 5s infinite;
+}
+
+@keyframes container-1 {
+    0%   {
+        top: 300px;
+    }
+    25%  {
+        
+    }
+    50%  {
+        
+    }
+    75%  {
+        
+    }
+    100% {
+        
+    }
+}
