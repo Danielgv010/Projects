@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="col-2">
+            <a href="crud.py">See All</a>
+            <form action="filter.py">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+                <label for="company">Company</label>
+                <input type="text" name="company" id="company">
+                <label for="theme">Theme</label>
+                <input type="text" name="theme" id="theme">
+                <label for="player-count">Player Count</label>
+                <input type="text" name="player-count" id="player-count">
+                <input type="submit" value="Filter">
+            </form>
+        </div>
+        <div class="col-2">
+            <table>
+                <thead>
+                    <th>Nombre</th>
+                    <th>Empresa</th>
+                    <th>Tematica</th>
+                    <th>Numero de Jugadores</th>
+                    <th>Año de publicacion</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody id="table-body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

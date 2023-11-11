@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap');
 
 /*
+<<<<<<< HEAD
+    Titles = 1.1em
+    Subtitles = 1em
+=======
     Titles = 1.5em
     Subtitles = 1.2em
+>>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
     Text  = 0.9em
 */
 
@@ -12,6 +17,17 @@
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
+body{
+    font-family: "Poppins", sans-serif;
+    color:white;
+    background: black;
+}
+
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+=======
 html{
     scroll-behavior: smooth;
 }
@@ -25,6 +41,7 @@ body{
 .wrapper{
     min-height: 100vh;
     min-width: 100vw;
+>>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
     overflow: hidden;
 }
 
@@ -86,7 +103,11 @@ header nav div a img{
 .banner{
     position: absolute;
     width: 100vw;
+<<<<<<< HEAD
+    height: 100vh;
+=======
     height: 100svh;
+>>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
     top:0;
     left:0;
     overflow: hidden;
@@ -102,6 +123,8 @@ header nav div a img{
     filter: brightness(60%);
 }
 
+<<<<<<< HEAD
+=======
 .banner img{
     position: absolute;
     top:50%;
@@ -111,6 +134,7 @@ header nav div a img{
     filter: brightness(60%);
 }
 
+>>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
 .banner-content{
     position: absolute;
     top:50%;
@@ -143,7 +167,11 @@ header nav div a img{
     left: 0;
     top:0;
     z-index: 99;
+<<<<<<< HEAD
+    height: 100vh;
+=======
     height: 100svh;
+>>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
     width: 100vw;
     justify-content: center;
     align-items: center;
@@ -154,6 +182,18 @@ header nav div a img{
     position: relative;
     display: flex;
     background: transparent;
+<<<<<<< HEAD
+    width: 500px;
+    height: 600px;
+    padding:2rem;
+    background:rgba(255,255,255,0.5);
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    justify-content: center;
+    align-items: center;
+    color: black;
+=======
     width: 400px;
     height: 300px;
     padding:2rem;
@@ -164,6 +204,7 @@ header nav div a img{
     justify-content: center;
     align-items: center;
     color: white;
+>>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
 }
 
 #modal .modal-content .x{
@@ -185,7 +226,11 @@ header nav div a img{
     position: relative;
     width: 300px;
     height: 50px;
+<<<<<<< HEAD
+    border-bottom: 2px solid black;
+=======
     border-bottom: 2px solid white;
+>>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
     margin: 30px 0;
 }
 
@@ -206,6 +251,8 @@ header nav div a img{
     background: transparent;
     border: none;
     outline: none;
+<<<<<<< HEAD
+=======
     color:inherit;
 }
 
@@ -230,11 +277,14 @@ header nav div a img{
 #modal .modal-content form .modal-button button:hover{
     background:rgba(255,255,255,0.2);
 
+>>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
 }
 
 #modal .modal-content form .input input:focus~label,
 #modal .modal-content form .input input:valid~label{
     top: -5px;
+<<<<<<< HEAD
+=======
 }
 
 .separator-banner{
@@ -349,4 +399,5 @@ p{
 a{
     color: inherit;
     text-decoration: inherit;
+>>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
 }

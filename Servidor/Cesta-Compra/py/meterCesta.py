@@ -4,8 +4,7 @@ import http.cookies
 import os
 import funcionesHTML
 
-from urllib.parse import urlparse, unquote, parse_qs
-import math
+from urllib.parse import urlparse, parse_qs
 
 #Recupera las variables del sistema
 ru = os.environ.get("REQUEST_URI")

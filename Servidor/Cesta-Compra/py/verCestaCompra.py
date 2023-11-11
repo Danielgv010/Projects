@@ -2,7 +2,6 @@
 
 import http.cookies
 import os
-import funcionesHTML
 
 print("Content-Type: text/html\n")
 cookie = http.cookies.SimpleCookie()

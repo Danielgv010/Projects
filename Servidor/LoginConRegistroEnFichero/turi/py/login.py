@@ -1,4 +1,5 @@
-#!C:\Users\zx22student3206\AppData\Local\Programs\Python\Python311\python.exe
+#!C:\Users\deras\AppData\Local\Programs\Python\Python310\python.exe
+
 
 import htmlPages
 import http.cookies, uuid
