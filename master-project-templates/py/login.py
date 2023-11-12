@@ -1,5 +1,7 @@
 #!C:\Users\deras\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\python.exe
 
+# Este python gestiona el inicio de sesión del usuario y crea la cookie de login si inicia sesión
+
 import uuid
 import modules.cookies
 import htmlCode
@@ -11,16 +13,16 @@ parameter = parse_qs(os.environ.get('QUERY_STRING'))
 
 data_directory = '../data/';data_file = 'accounts.json' # Ruta del archivo .json
 
-def parameter_validation():
-    expected_parameters = ["email","password"] # Parámetros a comprobar que están
+def parameter_validation(): # Comprueba que se hayan pasado los parámetros y los devuelve con la contraseña encriptada
+    expected_parameters = ["email","password"]
 
-    for expected in expected_parameters: # Por cada parámetro esperado
+    for expected in expected_parameters: # Por cada parámetro esperado, comprueba que no falte o que no esté vacío
         if expected not in parameter: # Si falta en la url
-            htmlCode.message_page("error", f"{expected} parameter cant be missing", "main.py") # Muestra mensaje de error
-            exit() # Se sale del python
+            htmlCode.message_page("error", f"{expected} parameter cant be missing", "main.py")
+            exit()
         if parameter[expected][0] == "": # Si el parámetro está vacío
-            htmlCode.message_page("error", f"{expected} cant be empty", "main.py") # Muestra un mensaje de error
-            exit() # Se sale del python
+            htmlCode.message_page("error", f"{expected} cant be empty", "main.py")
+            exit()
 
     #Recupera los parámetros de la URL
     email = parameter["email"][0]
@@ -28,7 +30,7 @@ def parameter_validation():
     
     password_encode = hashlib.sha512(str.encode(password)).hexdigest() # Encripta la contraseña
 
-    return email,password_encode # Devuelve el email y la contraseña encriptada
+    return email,password_encode
 
 credentials = parameter_validation() # Guarda las credenciales
 
@@ -39,9 +41,9 @@ with open(data_directory+data_file) as file: # Abre el fichero en modo lectura
         account_list = []
 
     for account_iterator in account_list: # Por cada cuenta en la lista de cuentas
-        if account_iterator[1] == credentials[0] and account_iterator[2]==credentials[1]: # Si coincide el email y la contraseña
-            modules.cookies.create_cookie("LOGIN",uuid.uuid1(),"Mon, 13 Nov 2023 07:30:00 GMT;") # Se crea una cookie con el nombre LOGIN, un valor aleatorio y que expira el lunes 13
-            htmlCode.message_page("success", f"Youve logged in as {account_iterator[0]}", "crud.py") # Muestra un mensaje de éxito
-            exit() # Se sale del python
+        if account_iterator[1] == credentials[0] and account_iterator[2]==credentials[1]: # Si coincide el email y la contraseña se crea una cookie con el nombre LOGIN, un valor aleatorio y que expira el lunes 13
+            modules.cookies.create_cookie("LOGIN",uuid.uuid1(),"Mon, 13 Nov 2023 07:30:00 GMT;")
+            htmlCode.message_page("success", f"Youve logged in as {account_iterator[0]}", "crud.py")
+            exit()
 
-htmlCode.message_page("error", "Invalid login", "main.py") # Si no ha iniciado sesión muestra mensaje de error
+htmlCode.message_page("error", "Invalid login", "main.py") # Si no ha conseguido iniciar sesión muestra mensaje de error

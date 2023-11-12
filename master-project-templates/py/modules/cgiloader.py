@@ -1,13 +1,21 @@
+
+# Este python permite tratar los ficheros subidos por el usuario en un formulario
+# Si se va a usar este .py el form necesita tener enctype="multipart/form-data" y method="post" como atributos
+
 import cgi ,os
 import cgitb; cgitb.enable()
 
-# Si se va a usar este .py el form necesita tener enctype="multipart/form-data" y method="post" como atributos
 
-def directory_exists(directory): # Comprueba que el directorio donde se guardará el archivo existe
-    if not os.path.isdir(directory): # Si no existe la carpeta
-        os.mkdir(directory) # Crea la carpeta
+# -------- Recibe como parámetros el nombre del directorio a comprobar --------
 
-def save_file(file_selector_name, file_directory): # Hace una copia del archivo subido por el usuario en el directorio que se le indica a la funcion
+def directory_exists(directory): # Comprueba que el directorio donde se guardará el archivo existe y si no existe lo crea
+    if not os.path.isdir(directory): # Si no existe la carpeta, la crea
+        os.mkdir(directory)
+
+
+# -------- Recibe como parámetros el nombre del input donde se sube el archivo y el directorio donde se quiere guardar el archivo --------
+
+def save_file(file_selector_name, file_directory): # Hace una copia del archivo subido por el usuario en el directorio que se le indica a la funcion y devuelve el nombre del fichero
     directory_exists(file_directory)  # Comprueba que el directorio donde se guardará el archivo existe
     form = cgi.FieldStorage() # Crea un objeto cgi
     file_item = form[file_selector_name] # Pilla el archivo subido en el formulario
@@ -17,30 +25,35 @@ def save_file(file_selector_name, file_directory): # Hace una copia del archivo 
     return file_name
 
 
-def create_table(file_directory, file_name, separator): # Devuelve una tabla con los datos del fichero
-    table = "<table border='1px solid'>" # Variable donde se guardará la tabla html
+# -------- Recibe como parámetros el directorio donde se encuentra el archivo a procesar, el nombre de dicho archivo y el carácter con el que se hará el split() --------
+
+def create_table(file_directory, file_name, separator): # Devuelve una tabla con los datos del fichero y la devuelve
+    table = "<table border='1px solid'>"
     with open(file_directory+file_name) as file: # Abre el fichero en modo lectura
         header = file.readline().split(separator) # Hace un array separando la primera linea del fichero por el separador que se le pasa a la funcion
         header = [element.strip() for element in header] # Elimina los espacios vacíos de los valores del array
-        table += "<tr>" # Se añade el principio del primer tr a la tabla
-        for value in header: # Por cada valor del array header
-            table += f"<th>{value}</th>" # Se añaden los valores de la cabecera dentro de un <th/> y luego el <th/> a la tabla
-        table += "</tr>" # Se añade el final del primer tr a la tabla
+        table += "<tr>"
+        for value in header: # Por cada valor del array header crea los th de la tabla
+            table += f"<th>{value}</th>"
+        table += "</tr>"
         for line in file: # Por cada linea restante en el fichero
-            table += "<tr>" # Se añade una etiqueta <tr> a la tabla
-            for data in line.split(separator): # Hace un array separando la primera linea del fichero por el separador que se le pasa a la funcion
-                table += f"<td>{data.strip()}</td>" # Se añade cada valor dentro de un <td/> y luego el <td/> a la tabla
-            table += "<tr>" # Se añade una etiqueta </tr> a la tabla
-        table += "</table>" # Se añade la etiqueta de cierre a la tabla
-        return table # Devuleve la tabla
+            table += "<tr>"
+            for data in line.split(separator): # Hace un array separando la primera linea del fichero por el separador que se le pasa a la funcion y lo recorre para crear los td
+                table += f"<td>{data.strip()}</td>"
+            table += "<tr>"
+        table += "</table>"
+        return table
 
-def create_list(file_directory, file_name, separator): # Crea la lista
-    list = "<ol>" # Inicio de la lista
+
+# -------- Recibe como parámetros el directorio donde se encuentra el archivo a procesar, el nombre de dicho archivo y el carácter con el que se hará el split() --------
+
+def create_list(file_directory, file_name, separator): # Crea una lista html con los atos del fichero y la devuelve
+    list = "<ol>"
     with open(file_directory+file_name) as file: # Abre el fichero en modo lectura
         for i, value in enumerate(file.read().split(separator)): # Lee el fichero, lo mete en un array separandolo por el separator pasado a la funcion y recorre el array almacenando el número de iteración en i
-            if i == 0: # Si es la primera iteracion del for
-                list += f"<h1>{value}</h1>" # Crea un h1
-            else: # Si no es la primera iteracion
-                list += f"<li>{value}</li>" # Crea un li
-    list += "</ol>" # Fin de la lista
-    return list # Devuelve la lista
+            if i == 0: # Si es la primera iteracion del for crea un h1
+                list += f"<h1>{value}</h1>"
+            else: # Si no es la primera iteracion crea un li
+                list += f"<li>{value}</li>"
+    list += "</ol>"
+    return list

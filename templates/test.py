@@ -40,7 +40,25 @@ import cookies, database, cgiloader
 # cgiloader.save_file("test-upload","files/")
 # print(cgiloader.create_table("files/","ligafutbol.csv",";"))
 
+<<<<<<< HEAD
+# original_array = [1, 2, 3, 4, 5]
+# second_array = original_array[1:4]
+
+# print(second_array)
+
+tuple = (1,2,3,4)
+array = [1,2,3,4]
+diccionario = {"uno":1,"dos":2}
+set = {1,2,3,4}
+
+print(help(set))
+# print(diccionario.get("dos"))
+# print(diccionario.items())
+# print(diccionario.keys())
+# print(diccionario.values())
+=======
 original_array = [1, 2, 3, 4, 5]
 second_array = original_array[1:4]
 
 print(second_array)
+>>>>>>> b8bbda6eea90af03c8dfef8cdb86d8a68a6bbe09

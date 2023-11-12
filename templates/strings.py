@@ -3,7 +3,11 @@ def split_letters(text): #Separa las letras en diferentes líneas
     for letter in text: # Por cada letra en el texto
         print(letter+"<br>")
 
+<<<<<<< HEAD
+def count_letters(text): #Cuenta las letras de una frase sin contar los espacios o caracteres no alfanumericos
+=======
 def cuentaLetras(text): #Cuenta las letras de una frase sin contar los espacios o caracteres no alfanumericos
+>>>>>>> b8bbda6eea90af03c8dfef8cdb86d8a68a6bbe09
     counter = 0
     for letter in text.upper(): # Por cada letra del texto
         if letter >= "A" and letter <= "Z" or letter == "Ñ": # Si es una letra y no un caracter alfanumerico
@@ -47,5 +51,10 @@ def count_vowels(text): #Centa cuantas vocales hay en el texto
                 u+=1
     return [a,e,i,o,u] # Devuelve un array con los contadores
 
+<<<<<<< HEAD
+def split_words(text, separator): # Separa un texto por el separador que se le pasa a la funcion y lo devuelve como array
+    return text.split(separator)
+=======
 def split_words(texto, separator): # Separa un texto por el separador que se le pasa a la funcion y lo devuelve como array
     return texto.split(separator)
+>>>>>>> b8bbda6eea90af03c8dfef8cdb86d8a68a6bbe09

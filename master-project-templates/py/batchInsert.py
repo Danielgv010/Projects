@@ -1,5 +1,7 @@
 #!C:\Users\deras\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\python.exe
 
+# Este python permite insertar los registros guardados en un csv en la BDD
+
 import modules.cgiloader
 import modules.database
 import htmlCode
@@ -13,4 +15,4 @@ with open("../data/"+file_name,"r") as file: # Abre la copia del fichero en modo
         database.insert("videojuegosantiguos",column_name,line.split(";")) # Separa la linea por los ; y lo guarda en un array el cual pasa al metodo insert para insertar cada linea en la BDD
 
 database.close_database() # Cierra la BDD
-htmlCode.message_page("success","Rows inserted","crud.py") # Muestra un mensaje de éxito
+htmlCode.message_page("success","Rows inserted","crud.py")

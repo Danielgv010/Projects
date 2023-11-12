@@ -1,3 +1,5 @@
+# Este python contiene el código html que se usa en la app
+
 def home_page():
     print('''
 <!DOCTYPE html>

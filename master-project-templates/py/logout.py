@@ -1,5 +1,7 @@
 #!C:\Users\deras\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\python.exe
 
+# Este python permite cerrar sesión borrando la cookie de login
+
 import modules.cookies
 import htmlCode
 
