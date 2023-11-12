@@ -80,15 +80,15 @@ def get_cookie_value(cookie_name): # Devuelve el valor de la cookie con el nombr
     return cookie[cookie_name].value
 
 
-# -------- Recibe como parámetros el nombre de la cookie sobre la que operar y el tipo de operación a realizar --------
-# -------- Solo acepta + si se quiere incrementar en uno o - si se quiere decrementar 1 --------
+# -------- Recibe como parámetros el nombre de la cookie sobre la que operar, el tipo de operación a realizar y el numero de incremento/decremento --------
+# -------- Solo acepta + si se quiere incrementar o - si se quiere decrementar --------
 
-def counter_cookie(cookie_name, operator): # Incrementa o decrementa el valor de una cookie
+def counter_cookie(cookie_name, operator, value): # Incrementa o decrementa el valor de una cookie
     cookie = http.cookies.SimpleCookie()
     cookie.load(get_cookies()) # Carga las cookies activas en el objeto cookie
     if operator == "+": # Si se quiere incrementar el valor de la cookie
-            cookie[cookie_name] = int(cookie[cookie_name].value) + 1
+            cookie[cookie_name] = int(cookie[cookie_name].value) + value
     elif operator == "-": # Si se quiere decrementar el valor de la cookie
-            cookie[cookie_name] = int(cookie[cookie_name].value) - 1
+            cookie[cookie_name] = int(cookie[cookie_name].value) - value
     print_cookie(cookie) # Imprime la cookie
 
