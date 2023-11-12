@@ -40,16 +40,14 @@ def parameter_validation(): # Comprueba que se hayan pasado los parámetros y lo
     return name,email,password_encode
 
 def check_file(): # Comprueba que exista el fichero y que no esté vacío
-    try: # Prueba a abrir el fichero en modo lectura
-        file = open(data_directory+data_file,"r")
-    except: # Si no puede lo crea
-        file = open(data_directory+data_file,"x")
+    if not os.path.exists(data_directory+data_file): # Si el fichero no existe lo crea
+        file = open(data_directory+data_file,"x") # Crea el fichero
+        file.close()
 
     if os.path.getsize(data_directory+data_file) == 0: # Si el fichero está vacío
-        file.close()
         file = open(data_directory+data_file,'wt') # Abre el fichero en modo sobreescritura
         file.write("[]") # Escribe [] en el fichero
-    file.close()
+        file.close()
 
 account = parameter_validation() # Guarda los datos de la cuenta en una variable
 check_file() # Comprueba la existencia del fichero y que no esté vacío
