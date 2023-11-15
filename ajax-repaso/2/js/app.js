@@ -3,6 +3,14 @@ const INPUTNAME = document.getElementById("name")
 const INPUTAGE = document.getElementById("age")
 let promptCity = ""
 let person_list = []
+let table_exist = false
+
+onload = function(){
+    while(promptCity==""){
+        promptCity = window.prompt("Ciudad: ");
+        setInterval(10000)
+    }
+}
 
 function Person(name, age, city){
     this.name = name;
@@ -45,18 +53,24 @@ function showTable(){
 
 function createTable(data_list){
     person_list = [];
-    for (data of data_list){
+    if (table_exist){
+        document.getElementById("table").remove()
+    }
+
+    for (let data of data_list){
         person = new Person(data[0],data[1],data[2]);
         person_list.push(person);
     }
 
     table = document.createElement("table");
     table.setAttribute("border", 1);
-    for (person of person_list){
+    table.setAttribute("id", "table");
+    for (let person of person_list){
         table.appendChild(person.createRow())
     }
 
     TABLEDIV.appendChild(table)
+    table_exist = true
 }
 
 function checkForm(){
@@ -69,9 +83,6 @@ function checkForm(){
     if (INPUTAGE.value == null || INPUTAGE.value == ""){
         INPUTAGE.style.background = "red"
         ok = false
-    }
-    while(promptCity==""){
-        promptCity = window.prompt("Dime la ciudad")
     }
 
     return ok

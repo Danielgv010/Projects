@@ -2,12 +2,15 @@
 
 import os, json
 from urllib.parse import parse_qs
+import sys
 
 # Obtener los parametros que envía el formulario
 parameter = parse_qs(os.environ.get('QUERY_STRING'))
 
 def parameter_validation(): # Comprueba que se hayan pasado los parámetros y los devuelve con la contraseña encriptada
     #Recupera los parámetros de la URL
+    sys.stderr.write(str(os.environ.get('QUERY_STRING')))
+    sys.stderr.write(str(parameter))
     name = parameter["name"][0]
     age = parameter["age"][0]
     city = parameter["city"][0]

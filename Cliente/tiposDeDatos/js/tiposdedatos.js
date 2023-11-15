@@ -19,3 +19,7 @@ console.log(x(1,4));
 let y = trataDato(1,5);
 
 console.log(y);
+
+document.getElementById("a").addEventListener("mouseover", ()=>{
+    alert("ok..")
+})
