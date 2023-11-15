@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        visibility: hidden
+        caption-side: bottom  =>  Etiqueta caption en las tablas 
+        */
+        .wrapper{
+            min-height: 20vh;
+            width: 100vw;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 1rem;
+        }
+        .container{
+            height: 100px;
+            width: 100px;
+            background-color: rebeccapurple;
+            border: 1px solid black;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+        }
+        div{
+            position: relative;
+        }
+        img{
+            width: 100%;
+        }
+        .translate:hover{
+            transform: translate(10px, 20px);
+        }
+        .rotate:hover{
+            transform: rotate(30deg);
+        }
+        .scale:hover{
+            transform: scale(1.2,0.8);
+        }
+        .skew:hover{
+            transform: skew(10deg, 15deg);
+        }
+        /* matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) */
+        .matrix-translate:hover{
+            transform: matrix(1,0,0,1,10,20);
+        }
+        .matrix-rotate:hover{
+            transform: rotate(1,);
+        }
+        .matrix-scale:hover{
+            transform: matrix(1.2,0,0,0.8,0,0);
+        }
+        .matrix-skew:hover{
+            transform: matrix(1,tan(10deg),tan(15deg),1,0,0)
+        }
+        .animation:focus{
+            /* nombre duracion transicion retraso iteraciones orden modo_fill */
+            animation: animation 4s linear 0s 1 alternate forwards;
+        }
+        @keyframes animation {
+            0%{
+                width: 50px;
+            }
+            100%{
+                width: 200px;
+            }
+        }
+        .transition{
+            /* nombre duracion transicion retraso */
+            transition: width 2s ease 1s;
+        }
+        .transition:focus{
+            width: 200px;
+        }
+        .blur img{
+            filter:blur(2px);
+        }
+        .brightness img{
+            filter: brightness(50%);
+        }
+        .contrast img{
+            filter: contrast(10%)
+        }
+        .drop-shadow img{
+            filter: drop-shadow(10px 40px 3px black)
+        }
+        .grayscale img{
+            filter: grayscale(100%);
+        }
+        .hue-rotate img{
+            filter: hue-rotate(30deg);
+        }
+        .invert img{
+            filter: invert(100%);
+        }
+        .opacity img{
+            filter: opacity(50%);
+        }
+        .saturate img{
+            filter: saturate(60%);
+        }
+        .sepia img{
+            filter: sepia(100%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container translate">Translate</div>
+        <div class="container rotate">Rotate</div>
+        <div class="container scale">Scale</div>
+        <div class="container skew">Skew</div>
+    </div>
+    <div class="wrapper">
+        <div class="container matrix-translate">Translate</div>
+        <div class="container matrix-scale">Scale</div>
+        <div class="container matrix-skew">Skew</div>
+    </div>
+    <div class="wrapper">
+        <button class="container animation">Animation</button>
+        <button class="container transition">Transition</button>
+    </div>
+    <div class="wrapper">
+        <div class="container img blur">Blur<img src="img.png"></div>
+        <div class="container img brightness">Brightness<img src="img.png"></div>
+        <div class="container img contrast">Contrast<img src="img.png"></div>
+        <div class="container img drop-shadow">Drop Shadow<img src="img.png"></div>
+        <div class="container img grayscale">Graycale<img src="img.png"></div>
+        <div class="container img hue-rotate">Hue rotate<img src="img.png"></div>
+        <div class="container img invert">Invert<img src="img.png"></div>
+        <div class="container img opacity">Opacity<img src="img.png"></div>
+        <div class="container img saturate">Saturate<img src="img.png"></div>
+        <div class="container img sepia">Sepia<img src="img.png"></div>
+    </div>
+</body>
+</html>
