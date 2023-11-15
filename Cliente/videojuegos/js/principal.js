@@ -16,6 +16,10 @@ function principal() {
     document.getElementById("botonInsertar").addEventListener("click", () => {
         insertar();
     })
+    document.getElementById("botonModificar").addEventListener("click", () => {
+        modificarCommit();
+        console.log("done")
+    })
     traerDatosServidor();
     // plantilla = document.getElementById("filaDatos");
     // tbodyDatos = document.getElementById("tablaDatos");
@@ -67,7 +71,7 @@ function traerDatosServidor() {
     }
     //Hacer la llamada al servidor
     // ------Peticion al servidor------
-    httpRequest.open("GET", "/Servidor/Videojuegos/pedirdatosAPI.py", true); // Construir la peticion
+    httpRequest.open("GET", "/Projects/Servidor/Videojuegos/pedirdatosAPI.py", true); // Construir la peticion
     httpRequest.send(); // Ejecutar la peticion
 }
 
@@ -131,12 +135,91 @@ function borrar(id) {
     }
     //Hacer la llamada al servidor
     // ------Peticion al servidor------
-    httpRequest.open("GET", "/Servidor/Videojuegos/borrarAPI.py?id=" + id, true); // Construir la peticion
+    httpRequest.open("GET", "/Projects/Servidor/Videojuegos/borrarAPI.py?id=" + id, true); // Construir la peticion
     httpRequest.send(); // Ejecutar la peticion
 }
 
 function modificar(vj) {
-    console.log(vj)
+    //Crear el objeto para conectar al servidor
+    const httpRequest = new XMLHttpRequest();
+    //Resolver la respuesta
+    // ------Registrar la funcion que trata la respuesta del servidor------
+    httpRequest.onreadystatechange = function () { // Se ejecuta cuando se completa la respuesta del servidor
+        if (this.readyState == 4 && this.status == 200) { // Si la respuesta es correcta
+            console.log(this.responseText); // Imprime por consola la respuesta en formato json
+            let modificar = JSON.parse(this.responseText);
+            document.getElementById("idModificar").value = modificar[0];
+            document.getElementById("nombreModificar").value = modificar[1];
+            document.getElementById("empresaModificar").value = modificar[2];
+            document.getElementById("tematicaModificar").value = modificar[3];
+            document.getElementById("numJugadoresModificar").value = modificar[4];
+            document.getElementById("anioModificar").value = modificar[5];
+        } else { //La petición tiene un error
+            console.log(`estado: ${this.readyState}, respuesta servidor: ${this.status}`); // Imprime el error por consola
+        }
+    }
+    //Hacer la llamada al servidor
+    // ------Peticion al servidor------
+    httpRequest.open("GET", "/Projects/Servidor/Videojuegos/modificarAPI.py?id=" + vj, true); // Construir la peticion
+    httpRequest.send(); // Ejecutar la peticion
+}
+
+function modificarCommit() {
+    let id = document.getElementById("idModificar").value;
+    let nombre = document.getElementById("nombreModificar").value;
+    let empresa = document.getElementById("empresaModificar").value;
+    let tematica = document.getElementById("tematicaModificar").value;
+    let nJug = document.getElementById("numJugadoresModificar").value;
+    let publicacion = document.getElementById("anioModificar").value;
+
+    let insertaDatos = "";
+    let datosOk = true;
+
+    if (id != "") {
+        insertaDatos += "id=" + id;
+    } else {
+        datosOk = false;
+    }
+    if (nombre != "") {
+        insertaDatos += "&nombre=" + nombre;
+    } else {
+        datosOk = false;
+    }
+    if (empresa != "") {
+        insertaDatos += "&empresa=" + empresa;
+    } else {
+        datosOk = false;
+    }
+    if (tematica != "") {
+        insertaDatos += "&tematica=" + tematica;
+    } else {
+        datosOk = false;
+    }
+    if (nJug != "") {
+        insertaDatos += "&nJug=" + nJug;
+    } else {
+        datosOk = false;
+    }
+    if (publicacion != "") {
+        insertaDatos += "&anio=" + publicacion;
+    } else {
+        datosOk = false;
+    }
+    //Crear el objeto para conectar al servidor
+    const httpRequest = new XMLHttpRequest();
+    //Resolver la respuesta
+    // ------Registrar la funcion que trata la respuesta del servidor------
+    httpRequest.onreadystatechange = function () { // Se ejecuta cuando se completa la respuesta del servidor
+        if (this.readyState == 4 && this.status == 200) { // Si la respuesta es correcta
+            console.log(this.responseText); // Imprime por consola la respuesta en formato json
+        } else { //La petición tiene un error
+            console.log(`estado: ${this.readyState}, respuesta servidor: ${this.status}`); // Imprime el error por consola
+        }
+    }
+    //Hacer la llamada al servidor
+    // ------Peticion al servidor------
+    httpRequest.open("GET", "/Projects/Servidor/Videojuegos/modificarCommitAPI.py?"+ insertaDatos, true); // Construir la peticion
+    httpRequest.send(); // Ejecutar la peticion
 }
 
 function filtrar() {
@@ -198,7 +281,7 @@ function filtrar() {
     }
     //Hacer la llamada al servidor
     // ------Peticion al servidor------
-    httpRequest.open("GET", "/Servidor/Videojuegos/filtrarDatosAPI.py?" + filtro, true); // Construir la peticion
+    httpRequest.open("GET", "/Projects/Servidor/Videojuegos/filtrarDatosAPI.py?" + filtro, true); // Construir la peticion
     httpRequest.send(); // Ejecutar la peticion
 }
 
@@ -259,7 +342,7 @@ function insertar() {
 
         //hacer la llamada al servidor
         //contruir la peticion
-        httprq.open("GET", "/SERVIDOR/VideoJuegos/insertaDatosAPI.py?" + insertaDatos, true);
+        httprq.open("GET", "/Projects/SERVIDOR/VideoJuegos/insertaDatosAPI.py?" + insertaDatos, true);
 
         //ejecuto la peticion
         httprq.send();

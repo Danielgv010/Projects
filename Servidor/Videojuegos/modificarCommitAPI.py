@@ -1,6 +1,5 @@
 #!C:\Users\deras\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\python.exe
 
-
 import os,json
 from urllib.parse import urlparse, parse_qs
 
@@ -20,12 +19,14 @@ param = parse_qs(parametros[4])
 bd = BDVideoJuegos()
 
 
-if "nombre" in param and param["nombre"][0]!="" \
+if "id" in param and param["id"][0]!="" \
+    and "nombre" in param and param["nombre"][0]!="" \
     and "empresa" in param and param["empresa"][0]!="" \
     and "tematica" in param and param["tematica"][0]!="" \
     and "nJug" in param and param["nJug"][0]!="" \
     and "anio" in param and param["anio"][0]!="":
     #capturar los datos a insertar
+    id = param["id"][0]
     nombre = param["nombre"][0]
     empresa = param["empresa"][0]
     tematica = param["tematica"][0]
@@ -34,7 +35,7 @@ if "nombre" in param and param["nombre"][0]!="" \
 
 
     #borrar de la base de datos
-    bd.insertar(nombre,empresa,tematica,nJug,anio)
+    bd.modificar(id,nombre,empresa,tematica,nJug,anio)
 
 
     print(json.dumps(True))

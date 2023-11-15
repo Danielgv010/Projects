@@ -125,6 +125,7 @@ class BDVideoJuegos:
 
         #crear el texto de la consulta
         consulta = "UPDATE videojuegosantiguos SET nombre=%s,empresa=%s,tematica=%s,numero_de_jugadores=%s,publicacion=%s WHERE id=%s"
+        sys.stderr.write(id)
         val = (nombre, empresa, tematica, int(numJug), int(anio), int(id))
 
 
