@@ -8,7 +8,6 @@ let table_exist = false
 onload = function(){
     while(promptCity==""){
         promptCity = window.prompt("Ciudad: ");
-        setInterval(10000)
     }
 }
 
