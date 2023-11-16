@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SummitSeekers</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/modal.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header id="navbar">
+            <nav>
+                <div>
+                    <a href="index.html"><img src="img/pngwing.com.png" alt=""></a>
+                    <span><a href="about.html">ABOUT</a></span>
+                    <span><a href="shop.html">SHOP</a></span>
+                    <span><a href="explore.html">EXPLORE</a></span>
+                </div>
+                <button class="login" id="open">LOGIN</button>
+            </nav>
+        </header>
+        <section>
+            <div class="destinations-price">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Destination</th>
+                            <th>Country</th>
+                            <th>Date Visited</th>
+                            <th>Highlights</th>
+                            <th>Prices</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Aínsa</td>
+                            <td>Spain</td>
+                            <td>May 2023</td>
+                            <td>Medieval architecture, Castillo de Aínsa, Pyrenees views</td>
+                            <td>60$</td>
+                        </tr>
+                        <tr>
+                            <td>Oto</td>
+                            <td>Spain</td>
+                            <td>May 2023</td>
+                            <td>Oto Church, Pyrenean charm, scenic surroundings</td>
+                            <td>40$</td>
+                        </tr>
+                        <tr>
+                            <td>Bujaruelo</td>
+                            <td>Spain</td>
+                            <td>August 2023</td>
+                            <td>Pyrenean landscapes, Bujaruelo Valley, hiking trails</td>
+                            <td>10$</td>
+                        </tr>
+                        <tr>
+                            <td>Broto</td>
+                            <td>Spain</td>
+                            <td>August 2023</td>
+                            <td>Ordesa Valley, Sorrosal Waterfall, San Pedro Church</td>
+                            <td>80$</td>
+                        </tr>
+                        <tr>
+                            <td>Torla</td>
+                            <td>Spain</td>
+                            <td>August 2023</td>
+                            <td>Ordesa and Monte Perdido National Park, Torla Church</td>
+                            <td>120$</td>
+                        </tr>
+                        <tr>
+                            <td>Alquézar</td>
+                            <td>Spain</td>
+                            <td>August 2023</td>
+                            <td>Medieval architecture, Alquézar Castle, Vero River Gorge</td>
+                            <td>150$</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+    </div>
+    <div id="modal">
+        <div class="modal-content">
+            <form action="login.py">
+                <a href="#" class="x" id="close">&times;</a>
+                <h1>LOGIN</h1>
+                <div class="input">
+                    <input type="text" name="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input">
+                    <input type="text" name="password" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="modal-button">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </section>
+    </div>
+
+</body>
+
+</html>

@@ -1,15 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap');
 
 /*
-<<<<<<< HEAD
-    Titles = 1.1em
-    Subtitles = 1em
-=======
     Titles = 1.5em
     Subtitles = 1.2em
->>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
     Text  = 0.9em
 */
+:root {
+    --main-color: rgba(14, 26, 37, 1);
+    --secondary-color: rgba(230, 230, 230,1);
+    --terciary-color: rgb(158, 208, 254);
+    --fourth-color: rgb(26, 48, 69);
+    --rem-very-low: 0.25rem;
+    --rem-low: 0.75rem;
+    --rem-default: 1rem;
+    --rem-medium: 2rem;
+    --rem-high: 5rem;
+    --rem-ultra: 10rem;
+}
 
 *,*::before,*::after{
     padding: 0;
@@ -17,40 +24,36 @@
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-body{
-    font-family: "Poppins", sans-serif;
-    color:white;
-    background: black;
-}
-
-.wrapper{
-    height: 100vh;
-    width: 100vw;
-=======
 html{
     scroll-behavior: smooth;
 }
 
 body{
     font-family: "Poppins", sans-serif;
-    color:white;
-    background: rgba(14, 26, 37, 1);
+    color:var(--secondary-color);
+    background: var(--main-color);
+    overflow-x: hidden;
 }
 
 .wrapper{
-    min-height: 100vh;
-    min-width: 100vw;
->>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
-    overflow: hidden;
+    min-height: 100svh;
+    max-width: 100vw;
+}
+
+.scrolled{
+    background:var(--main-color) ;
 }
 
 header {
+    position: sticky;
+    top:0;
+    width: 100%;
     height: 100px;
-    padding: 1rem 2rem;
+    padding: var(--rem-default) var(--rem-medium);
     letter-spacing: 0.25em;
     font-size: 1.1em;
     background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0));
+    z-index: 999;
 }
 
 header nav{
@@ -59,14 +62,14 @@ header nav{
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding: 0rem 2rem;
+    padding: 0rem var(--rem-medium);
 }
 
 header nav div{
     display: flex;
     height: 100%;
     align-items: center;
-    gap:5rem;
+    gap:var(--rem-high);
 }
 
 header nav div a {
@@ -84,7 +87,7 @@ header nav div span a:after{
     content: "";
     display: block;
     height:2px;
-    background-color: white;
+    background-color: var(--secondary-color);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0%;
 }
@@ -103,11 +106,7 @@ header nav div a img{
 .banner{
     position: absolute;
     width: 100vw;
-<<<<<<< HEAD
-    height: 100vh;
-=======
     height: 100svh;
->>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
     top:0;
     left:0;
     overflow: hidden;
@@ -123,8 +122,6 @@ header nav div a img{
     filter: brightness(60%);
 }
 
-<<<<<<< HEAD
-=======
 .banner img{
     position: absolute;
     top:50%;
@@ -134,7 +131,6 @@ header nav div a img{
     filter: brightness(60%);
 }
 
->>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
 .banner-content{
     position: absolute;
     top:50%;
@@ -145,12 +141,29 @@ header nav div a img{
     line-height: 2em;
 }
 .banner-content  p{
-    margin-bottom: 1rem;
+    margin-bottom: var(--rem-default);
+}
+
+header nav button{
+    background-color: transparent;
+
+}
+.login{
+    border:1px solid white;
+    padding:var(--rem-low) var(--rem-medium);
+    color: inherit;
+    text-decoration: inherit;
+    transition: 0.5s ease;
+}
+
+.login:hover{
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
 }
 
 .button-a{
     border:1px solid white;
-    padding:0.5rem 2rem;
+    padding:var(--rem-low) var(--rem-medium);
     color: inherit;
     text-decoration: inherit;
     transition: 0.5s ease;
@@ -158,20 +171,20 @@ header nav div a img{
 
 .button-a:hover{
     background: rgba(255, 255, 255, 0.2);
-    padding: 0.75rem 2.25rem;
+    padding: var(--rem-low) var(--rem-high);
+}
+
+body.modal-open {
+    overflow-y: hidden;
 }
 
 #modal{
-    position: absolute;
+    position: fixed;
     display: none;
     left: 0;
     top:0;
     z-index: 99;
-<<<<<<< HEAD
-    height: 100vh;
-=======
     height: 100svh;
->>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
     width: 100vw;
     justify-content: center;
     align-items: center;
@@ -182,29 +195,16 @@ header nav div a img{
     position: relative;
     display: flex;
     background: transparent;
-<<<<<<< HEAD
-    width: 500px;
-    height: 600px;
-    padding:2rem;
-    background:rgba(255,255,255,0.5);
-    border: 2px solid rgba(255,255,255,0.5);
-    border-radius: 15px;
-    backdrop-filter: blur(20px);
-    justify-content: center;
-    align-items: center;
-    color: black;
-=======
     width: 400px;
     height: 300px;
-    padding:2rem;
+    padding:var(--rem-medium);
     background:rgba(255,255,255,0.2);
     border: 2px solid rgba(255,255,255,0.5);
     border-radius: 15px;
     backdrop-filter: blur(3px);
     justify-content: center;
     align-items: center;
-    color: white;
->>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
+    color: var(--terciary-color);
 }
 
 #modal .modal-content .x{
@@ -226,11 +226,7 @@ header nav div a img{
     position: relative;
     width: 300px;
     height: 50px;
-<<<<<<< HEAD
-    border-bottom: 2px solid black;
-=======
     border-bottom: 2px solid white;
->>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
     margin: 30px 0;
 }
 
@@ -251,8 +247,6 @@ header nav div a img{
     background: transparent;
     border: none;
     outline: none;
-<<<<<<< HEAD
-=======
     color:inherit;
 }
 
@@ -270,21 +264,18 @@ header nav div a img{
     color: inherit;
     background: transparent;
     outline: none;
-    padding:0.5rem 2rem;
+    padding:var(--rem-low) var(--rem-medium);
     transition: 1s ease;
 }
 
 #modal .modal-content form .modal-button button:hover{
     background:rgba(255,255,255,0.2);
 
->>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
 }
 
 #modal .modal-content form .input input:focus~label,
 #modal .modal-content form .input input:valid~label{
     top: -5px;
-<<<<<<< HEAD
-=======
 }
 
 .separator-banner{
@@ -297,33 +288,36 @@ header nav div a img{
     display: flex;
     height: 100%;
     width: 100%;
-    align-items: center;
-    padding: 5rem;
+    align-items: top;
+    padding: var(--rem-high);
+    flex: column;
 }
 
 .trending-destination .text{
-    display: block;
+    display: flex;
     text-align: end;
-    padding: 2rem;
+    padding: var(--rem-medium);
     height: 100%;
+    width: 50%;
+    flex-direction:column;
+    gap: var(--rem-medium);
 }
-
 
 .trending-destination .img{
     display: flex;
-    padding: 2rem;
+    padding: var(--rem-medium);
     overflow: hidden;
     height: 800px;
-    width: 600px;
+    width: 50%;
     justify-content: center;
 }
 
 .trending-destination .img img{
-    box-shadow: 1rem 1rem 1rem rgb(8, 14, 20);
+    box-shadow: var(--rem-default) var(--rem-default) var(--rem-default) rgb(8, 14, 20);
 }
 
 .other-destination{
-    padding: 2rem;
+    padding: var(--rem-medium);
     height: 100%;
 }
 
@@ -340,18 +334,18 @@ header nav div a img{
     display: flex;
     height: 500px;
     width: 300px;
-    background-color: white;
+    background-color: var(--secondary-color);
     border-radius: 15px;
     transition: 0.6s ease-out;
     overflow: hidden;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: var(--rem-default);
 }
 
 .other-destination .cards .card .text{
     position: absolute;
     top:0;
-    padding: 1.2rem;
+    padding: var(--rem-default);
 }
 
 .other-destination .cards .card:hover{
@@ -359,8 +353,12 @@ header nav div a img{
     width: 350px;
 }
 
+section{
+    min-height: 100%;
+}
+
 article{
-    min-height: 100svh;
+    min-height: max-content;
 }
 
 h1{
@@ -378,12 +376,18 @@ h2{
     letter-spacing: 0.3rem;
 }
 
+h3{
+    margin-bottom: var(--rem-default);
+    margin-top: var(--rem-medium);
+    color: var(--terciary-color);
+}
+
 p{
     font-size: 0.9em;
 }
 
 .underline{
-    padding-bottom: 5rem;
+    padding-bottom: var(--rem-high);
 }
 
 .underline::after{
@@ -399,5 +403,66 @@ p{
 a{
     color: inherit;
     text-decoration: inherit;
->>>>>>> dee21dd1ba7d6ebda5ad3395a8a5dc34adf689b7
+}
+
+.parallax{
+    position: absolute;
+    top:0;
+    height: 90svh;
+    width: 100vw;
+    z-index: -99;
+    background: url('img/Capa\ 2.png') fixed 100%;
+    background-position: top;
+}
+.parallax img{
+    position: absolute;
+    width: 100svw;
+    left: 0;
+}
+.img1{
+    bottom: 0;
+}
+.img2{
+    top:0;
+    position: fixed;
+}
+.text-about{
+    padding: var(--rem-high);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--rem-high);
+}
+.double-card{
+    display: flex;
+    gap: var(--rem-high);
+}
+.double-card div{
+    border: 2px solid var(--fourth-color);
+    padding: var(--rem-medium);
+    width: 50%;
+    box-shadow: var(--rem-very-low) var(--rem-very-low) 0 var(--fourth-color);
+}
+ul{
+    margin-left: var(--rem-high);
+    display: flex;
+    flex-direction: column;
+    gap:var(--rem-default);
+}
+.destinations-price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+}
+.destinations-price table{
+    border-collapse: collapse;
+}
+.destinations-price table *{
+    border: 4px solid var(--fourth-color);
+}
+.destinations-price table tr td, .destinations-price table tr th{
+    padding: var(--rem-default);
 }
